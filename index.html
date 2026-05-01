@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Cloudy But Learning</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script>
+function openDay(dayName){
+  var i, tabcontent;
+
+  tabcontent=document.getElementsByClassName("tabcontent");
+
+  for(i=0;i<tabcontent.length;i++){
+    tabcontent[i].style.display="none";
+  }
+
+  document.getElementById(dayName).style.display="block";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>☁️Cloudy But Learning</h1>
+<p>Hey all! Here I'm documenting my journey learning cloud computing. Feel free to browse through......</p>
+</div>
+
+<div class="tab">
+<button onclick="openDay('day1')">AWS Free Tier</button>
+<button onclick="openDay('day2')">AWS IAM</button>
+  <button onclick="openDay('day3')">AWS EC2</button>
+</div>
+
+<div class="container">
+
+<div id="day1" class="tabcontent">
+<div class="card">
+<h2>AWS Free Tier</h2>
+
+<img src="images/day1.jpg">
+
+<p>
+Won’t I be charged from my bank account if I create an AWS account and provide my payment details? 🤔
+</p>
+
+<p>
+I feel that when Amazon Web Services asks for bank or card details during signup, it discourages many people who are planning to explore the platform. A lot of beginners worry that money might get automatically deducted if they unknowingly use a paid service.
+</p>
+
+<p>
+Today, I signed up for the AWS Free Tier account, and honestly, I had the same apprehension. But I decided to go ahead with it anyway.
+</p>
+
+<p>
+From what I understood, AWS requires payment details mainly for identity verification and to prevent misuse of the platform. With the Free Tier, you get access to several services with usage limits that allow you to learn and experiment without cost (as long as you stay within those limits). You can access their free tier for 6 months, after which, your account will be closed automatically and your resources retained for 90 days. You can provide a credit card, debit card, or UPI during registration.
+</p>
+
+<p>
+So if this concern has been stopping you from creating an account and exploring cloud technologies - don’t let it hold you back. 😊
+</p>
+
+</div>
+</div>
+
+<div id="day2" class="tabcontent">
+<div class="card">
+<h2>AWS IAM</h2>
+
+<div class="image-gallery">
+  <img src="images/day2.jpg">
+  <img src="images/day2-2.jpg">
+  <img src="images/day2-3.jpg">
+  <img src="images/day2-4.jpg">
+</div>
+
+<p>
+As I started getting accustomed to the AWS Management Console, I spent some time
+practicing the components of AWS IAM (Identity and Access Management).
+</p>
+
+<p>I explored concepts such as:</p>
+
+<div class="list">
+<div>1) Users</div>
+<div>2) Groups</div>
+<div>3) Policies</div>
+<div>4) Roles</div>
+</div>
+
+<p>
+I found the concepts of groups and policies particularly interesting. Creating groups,
+attaching policies (managed or custom), and then adding users to those groups seems
+extremely useful in large organizations. It simplifies permission management and
+saves a lot of time compared to assigning permissions individually.
+</p>
+
+<p>
+I’ve often heard the term Amazon EC2 mentioned alongside cloud computing,
+so I’m planning to explore that next.
+</p>
+
+</div>
+</div>
+
+<div id="day3" class="tabcontent">
+<div class="card">
+<h2>AWS EC2</h2>
+
+<div class="image-gallery">
+  <img src="images/day3.png">
+  <img src="images/day3-2.png">
+  <img src="images/day3-3.png">
+  <img src="images/day3-4.png">
+  <img src="images/day3-5.png">
+  <img src="images/day3-6.png">
+</div>
+
+<p>
+What actually happens when someone says they “deployed Jenkins on the cloud”? 🤔 <br>
+I kinda did exactly this...Believe it or not, it is quite simple but also there is a little more to the story. Let me share what it...
+</p>
+
+<p>
+Imagine you want to set up a machine that automatically builds and tests your software whenever you need it. <br>
+But instead of installing it on your personal computer, you rent a computer somewhere on the internet that runs 24/7.
+</p>
+
+<div class="points">
+<div>👉 That rented computer is an EC2 instance</div>
+<div>👉 The platform providing the computer is AWS</div>
+<div>👉 And the automation tool you install on it is Jenkins</div>
+</div>
+
+<p>
+So the process is basically: <br>
+Rent a computer → log into it → install the required tools → open access so others can reach it.
+</p>
+
+<p><b>Here comes the technical part of what I did:</b></p>
+
+<div class="steps">
+<div>1) Launched an EC2 instance (configured the name, OS – Ubuntu, instance type – t2.micro, key pair login)</div>
+<div>2) Had to install MobaXterm to SSH into my EC2 instance, then updated it</div>
+<div>3) Installed Java JDK v17 before installing Jenkins</div>
+<div>4) Tried to access Jenkins from outside AWS using the EC2 public IP address through port 8080 and failed miserably due to security reasons</div>
+<div>5) Configured the security inbound rules of my EC2 instance to allow access through 8080</div>
+<div>6) Successfully deployed Jenkins on AWS and accessed it from outside AWS.</div>
+</div>
+
+<p>
+So, I learnt a bunch of new stuff while deploying Jenkins on AWS – the kind of things you only really understand once you try doing it yourself.
+</p>
+
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
